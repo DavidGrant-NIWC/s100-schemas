@@ -35,32 +35,34 @@ Version 4.0.0-20200326	2020-03-26	Raphael Malyankar for NOAA
     the ISO standards web site.
     Updated 22-Oct-2021 for 2021 ISO schemas by adding a rewrite for the path to the gmw files encoded in the
     ISO package from the ISO TC211 GitHub as of 18-Oct-2021.
+
+    2022-06-20: Updated for S-100 5.0.0, including references to schemas.isotc211.org
 -->
 
 <!-- Note:
      See the OASIS XML catalog standard for information on other kinds of rewrite rules. Report any
      other broken links in either the S-100 generic schemas or the ISO schemas used by them to Raphael.
-     This file is an example and you can customize it for your local installation.
+     This file is an example and you must customize it for your local installation by replacing the value
+     of "rewritePrefix" to point to your own installation folder.
 -->
 
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
 
-    <rewriteURI uriStartString="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19136_Schemas/"
-        rewritePrefix="https://standards.iso.org/iso/19136/"/>
-    <rewriteURI uriStartString="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/"
-        rewritePrefix="https://standards.iso.org/iso/19139/Schemas/"/>
-
-    <!-- The root folder for all S-100 5.0.x schemas -->
-    <!--<rewriteURI uriStartString="https://schemas.s100dev.net/" rewritePrefix="file:///F:/exth/raphaelm/ICPhase3/schemas+samples/"/>-->
-
-    <!-- rewrite for ISO TC211 schemas from ISO site to folder with ISO schemas package from old ISO site, on local system -->
-    <rewriteURI uriStartString="https://schemas.isotc211.org/" rewritePrefix="file:///F:/schemas/standards.iso.org/"/>
+    <!-- Rewrite location of all S-100 schemas by changing the URL prefix from schemas.s100dev.net to a local folder -->
+    <rewriteURI uriStartString="https://schemas.s100dev.net/" rewritePrefix="file:///F:/git/S100/"/>
     
-    <!-- rewrite for S-100 schema server to local folder -->
-    <!--<rewriteURI uriStartString="https://schemas.s100dev.net/" rewritePrefix="file:///F:/git/S100/"/>-->
+    <!-- Rewrite location of OGC schemas to the folder in the distribution archive (after unpacking) -->
+    <rewriteURI uriStartString="http://schemas.opengis.net/" rewritePrefix="file:///F:/git/S100/schemas/schemas.opengis.net/"/>
 
-    <!-- for the ISO TC211 schemas from the TC211 GitHub as of 18-Oct-2021. Needed to get the ISO TC211 examples in their 19115-1/mdb
-            folder to validate, may not apply to other distributions... -->
-    <!--<rewriteURI uriStartString="../../../../19136/-1/gmw/1.1.0/" rewritePrefix="../../../../19136/-/gmw/1.1.0/"/>-->
+    <!-- the ittf/PubliclyAvailableStandards location is used in the older ISO schemas in standards.ino.org -->
+    <!--<rewriteURI uriStartString="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19136_Schemas"
+        rewritePrefix="file:///F:/git/S100/schemas/schemas.opengis.net/gml/3.2.1/"/>-->
+    
+    <!-- Rewrite the location of all ISO schemas loaded from schemas.isotc211.org -->
+    <rewriteURI uriStartString="https://schemas.isotc211.org/" rewritePrefix="file:///F:/git/S100/schemas/schemas.isotc211.org/"/>
+
+    <!-- Rewriting the location of the TC211 schemas to the standards.iso.org folder is also possible, but will necessitate
+        adding the rewrite above for ittf/PubliclyAvailableStandards too -->
+    <!--<rewriteURI uriStartString="https://schemas.isotc211.org/" rewritePrefix="file:///F:/git/S100/schemas/standards.iso.org/"/>-->
 
 </catalog>
