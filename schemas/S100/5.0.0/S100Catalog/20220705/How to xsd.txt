@@ -1,8 +1,0 @@
-Note: contents of other parts of the official schema have been copied here and modified as needed. Changes include:
-* downloaded xlink.xsd and store locally
-* Modify most xsd's so they don't include the primary xsd from other xsd's. E.g., gmd/extent.xsd was modified so that it doesn't include gmd.xsd. Ensures as much as possible that only the XSD's actually needed for the S100 exchange catalog are used.
-* Modify the gml stuff to use the newer namespace for gco (xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" vice gco="http://www.isotc211.org/2005/gco"). Mostly impacts the files in schemas.opengis.net/iso/19139/20070417/*.
-
-Command to generate the class file (run from this folder):
-
-xsd.exe /c /f .\S100_ExchangeCatalogue.xsd xlink.xsd cat\1.0\cat.xsd cit\2.0\cit.xsd gco\1.0\gco.xsd gcx\1.0\gcx.xsd gex\1.0\gex.xsd gmw\1.0\gmw.xsd lan\1.0\lan.xsd mco\1.0\mco.xsd mmi\1.0\mmi.xsd mri\1.0\mri.xsd .\mcc\1.0\mcc.xsd cit\1.0\cit1.xsd .\S100SE\20220728\Part15.xsd .\gml\3.2.1\basicTypes.xsd .\gmd\citation.xsd .\gmd\extent.xsd .\gmd\referenceSystem.xsd .\gts\gts.xsd .\gss\gss.xsd .\gsr\gsr.xsd .\gmd\dataQuality.xsd .\gmd\maintenance.xsd .\gmd\identification.xsd .\gmd\constraints.xsd .\gmd\distribution.xsd
